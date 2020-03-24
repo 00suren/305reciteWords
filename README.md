@@ -1,7 +1,6 @@
 # 305reciteWords
 software engineering homework
 ---repository test---
-<<<<<<< Updated upstream
-abcd
-123456789
->>>>>>> Stashed changes
+###谢添是个大啥b
+###胡靖宇是个大啥b
+###苏源是个大啥b
