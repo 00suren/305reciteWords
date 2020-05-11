@@ -1,0 +1,13 @@
+<view class="container">
+  <image class="logo" src="/images/search-logo.jpg"></image>
+  <text class="name">背单词 v1.0.0</text>
+  <text class="name">开发者信息</text>
+  <text class="name">樊扬扬</text>
+  <text class="name">学号：17030130033</text>
+   <text class="name">胡靖宇</text>
+  <text class="name">学号：17030130034</text>
+   <text class="name">谢添</text>
+  <text class="name">学号：17030130032</text>
+   <text class="name">苏源</text>
+  <text class="name">学号：17030130031</text>
+</view>

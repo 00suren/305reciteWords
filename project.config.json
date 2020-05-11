@@ -9,15 +9,12 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"coverView": true,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false
+		"autoAudits": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.3",
+	"libVersion": "2.4.2",
 	"appid": "wxa7cdc988296bfb77",
-	"projectname": "305ReciteWords",
+	"projectname": "305reciteWords",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
