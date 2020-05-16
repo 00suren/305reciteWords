@@ -1,0 +1,23 @@
+server:
+  port: 8010
+
+Spring:
+  application:
+    name: 305recitewords_backend
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver #mysql驱动包
+    url: jdbc:mysql://localhost:3306/words?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: malong1
+
+mybatis:
+  # 指定sql映射文件的位置
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.suren.entities #所有Entity别名类所在包
+  configuration:
+    # 开启驼峰命名
+    map-underscore-to-camel-case: true
+
+
