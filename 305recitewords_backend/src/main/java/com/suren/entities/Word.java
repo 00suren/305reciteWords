@@ -10,11 +10,11 @@ import lombok.Data;
 @Data
 public class Word {
 
-    private String content;
+    private String english;
 
     private Integer id;
 
-    private String pronunciation;
+    private String sent;
 
     private Integer level;
 

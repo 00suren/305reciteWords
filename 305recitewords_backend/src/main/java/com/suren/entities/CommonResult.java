@@ -13,11 +13,11 @@ import org.springframework.context.annotation.Bean;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class GetWordsResult {
+public class CommonResult<T> {
 
     private int code;
 
     private String message;
 
-    private Word word;
+    private T data;
 }
