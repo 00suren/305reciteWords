@@ -32,6 +32,7 @@ public class GetWordController {
 
     @GetMapping("word/push")
     public CommonResult<ArrayList<Word>> pushWords(){
+
         return getWordService.pushWords();
     }
 }
