@@ -1,5 +1,8 @@
 server:
   port: 8010
+  ssl:
+    key-store: classpath:3927138_www.00suren.top.pfx
+    key-store-password: btWJdutn
 
 Spring:
   application:
