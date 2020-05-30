@@ -12,9 +12,10 @@ Page({
     vocListMax: 12346
   },
 
-  onLoad: () => {
+  onLoad: function(){
     //从本地缓存单词表选取第一个单词
-    var idx = Math.floor(Math.random() * this.data.worldListMax) + 1
+    var idx = Math.floor(Math.random() * (this.data.worldListMax)) + 1;
+    console.log(idx);
     var word = list.wordList[idx]
 
     this.setData({
@@ -25,13 +26,13 @@ Page({
     })
   },
 
-  show: () => {
+  show: function () {
     this.setData({
       showNot: true
     })
   },
 
-  next: () => {
+  next: function () {
     this.setData({
       showNot: false
     })
