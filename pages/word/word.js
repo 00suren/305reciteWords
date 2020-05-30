@@ -9,7 +9,9 @@ Page({
     definition: null,
     audioUrl: null,
     worldListMax: 999,
-    vocListMax: 12346
+    vocListMax: 12346,
+    word_push:new Array(5),
+    count:0
   },
 
   onLoad: function(){
@@ -33,40 +35,61 @@ Page({
   },
 
   next: function () {
-    this.setData({
-      showNot: false
-    })
-
-    const { vocListMax, content, audioUrl } = this.data
-
-    // 从vocabulary.js中选取下一个单词
-    let idx = Math.floor(Math.random() * vocListMax) + 1
-    this.setData({
-      content: vocList.wordList[idx],
-    })
-
-    wx.request({
-      url: `https://api.shanbay.com/bdc/search/?word=${content}`,
-      data: {},
-      method: 'GET',
-      success: res => {
-
-        const data = res.data.data
-
+    this.countJudge().then(res=>{
+      console.log(this.data.word_push);
+    }).catch(err=>{
+      console.log("赋值")
+      this.setData({
+        showNot: false,
+        content: this.data.word_push[this.data.count].english,
+        pron: this.data.word_push[this.data.count].sent,
+        definition: this.data.word_push[this.data.count].chinese
+      })
+      }).then(res => {
+        console.log("赋值")
         this.setData({
-          content: data.content,
-          audioUrl: data.us_audio,
-          pron: data.pron,
-          definition: data.definition
+          showNot: false,
+          content: this.data.word_push[this.data.count].english,
+          pron: this.data.word_push[this.data.count].sent,
+          definition: this.data.word_push[this.data.count].chinese
         })
-        innerAudioContext.src = audioUrl
-      }
+      }).then(res=>{
+      console.log(this.data.count)
+      this.data.count++;
     })
+
   },
 
-  read: () => {
-    if (this.data.audioUrl) {
-      innerAudioContext.play()
-    }
+  getword:function(){
+    var that = this;
+    return new Promise(function(resolve,reject){
+      wx.request({
+        url: `https://00suren.top:8010/word/push`,
+        data: {},
+        method: 'GET',
+        success: res=>{
+          resolve(res);
+        }
+      })
+    })
+  
+  },
+  
+  countJudge:function(){
+    var that = this;
+    return new Promise(function (resolve, reject) {
+      if (that.data.count % 5 === 0) {
+        console.log("count清零")
+        that.data.count %= 5;
+        that.getword().then((res) => {
+          that.data.word_push = res.data.data;
+          resolve(res);
+        })
+      }
+      else{
+        console.log("count不清零")
+        reject(reject);
+      }
+    })
   }
 })

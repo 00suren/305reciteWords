@@ -1,8 +1,7 @@
 const app = getApp()
 
 Page({
-  //测试一下能不能和服务器交互
-  onLoad:()=>{
+  onLoad:function(){
     wx.request({
       url: `https://00suren.top:8010/word/push`,
       data: {},
@@ -10,19 +9,11 @@ Page({
       success: res => {
 
         const data = res.data.data
-        console.log(res)
+        console.log(res.data.data)
 
-        // this.setData({
-        //   content: data.content,
-        //   audioUrl: data.us_audio,
-        //   pron: data.pron,
-        //   definition: data.definition
-        // })
-        // innerAudioContext.src = null
       }
     })
   },
-
   showMyWord: function () {
     wx.showModal({
       title: '提示',
