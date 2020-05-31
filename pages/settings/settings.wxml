@@ -1,11 +1,14 @@
 <view class="container">
-  <view bindtap="bindViewTap" class="userinfo">
-    <view class="userinfo-avatar"> 
-      <open-data type="userAvatarUrl"></open-data>
-       <button open-type='getUserInfo'></button>
+  <view class="userinfo">
+    <view > 
+      <!-- <open-data type="userAvatarUrl"></open-data> -->
+      <label>
+      <image class="userinfo-avatar" src="{{avatarUrl||'http://b.yzcdn.cn/showcase/membercenter/2018/08/06/default_avatar@2x.png'}}"></image>
+        <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo"></button>
+      </label>
+      
     </view>
-    
-    <open-data class="userinfo-nickname" type="userNickName"></open-data>
+     <text class="userinfo-nickname">{{nickname||"点击头像登录"}}</text>
   </view>
   <view class="list-container">
   <!-- <view class="list-item" bindtap="showMyWord">
