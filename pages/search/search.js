@@ -5,12 +5,13 @@ Page({
   search: e => {
     let content = e.detail.value
     wx.request({
-      url: `https://api.shanbay.com/bdc/search/?word=${content}`,
+      //url: `https://api.shanbay.com/bdc/search/?word=${content}`,
+      url: `https://00suren.top:8010/word/get/${content}`,
       data: {},
       method: 'GET',
       success: res => {
-        const { msg } = res.data
-        if (msg == "SUCCESS") {
+        console.log(res);
+        if (res.data.code == 200 ) {
           wx.navigateTo({
             url: `./detail/detail?content=${content}`
           })
