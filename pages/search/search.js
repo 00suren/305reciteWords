@@ -11,11 +11,11 @@ Page({
       method: 'GET',
       success: res => {
         console.log(res);
-        if (res.data.code == 200 ) {
+        if (res.data.code == 200 & res.data.data !=null) {
           wx.navigateTo({
             url: `./detail/detail?content=${content}`
           })
-        } else {
+        } else{
           wx.showModal({
             title: '提示',
             content: '对不起，查询不到该词信息',
