@@ -2,18 +2,43 @@ const app = getApp()
 
 Page({
   onLoad:function(){
-    wx.request({
-      url: `https://00suren.top:8010/word/push`,
-      data: {},
-      method: 'GET',
+    wx.getSetting({
       success: res => {
+        console.log(res.authSetting);
+        if (res.authSetting['scope.userInfo']) {
+          wx.login({
+            success: () => {
+              wx.getUserInfo({
+                success: res => {
+                  this.globalData.userInfo = res.userInfo
+                  console.log(res)
+                },
+                fail: err => {
+                  console.log(err)
+                }
+              })
+            },
+            fail: err => {
+              console.log(err)
+            }
+          })
+        }
+        else {
+          console.log("登录失败");
+          wx.showToast({
+            title: '请授予权限',
+            icon: 'none'
+          })
 
-        const data = res.data.data
-        console.log(res.data.data)
-
+        }
+      },
+      fail: err => {
+        console.err;
       }
     })
+   
   },
+
   showMyWord: function () {
     wx.showModal({
       title: '提示',
@@ -37,6 +62,6 @@ Page({
     })
   },
   test: function(){
-   
+ 
   }
 })

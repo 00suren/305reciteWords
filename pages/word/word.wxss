@@ -71,6 +71,17 @@
   align-items: center;
 }
 
+.button-addNote {
+  display: flex;
+  flex-direction: column;
+  width: 360rpx;
+  height: 70rpx;
+  border: 2rpx solid #353535;
+  border-radius: 10rpx;
+  align-items: center;
+  margin-top: 18px;
+}
+
 .word-next {
   margin: auto;
   font-family: Songti TC;

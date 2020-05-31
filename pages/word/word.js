@@ -91,5 +91,9 @@ Page({
         reject(reject);
       }
     })
+  },
+
+  addNote:function(){
+
   }
 })

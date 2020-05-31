@@ -11,4 +11,7 @@
     <view class="button-next" catchtap="next">
       <text class="word-next" catchtap="next">下一个</text>
     </view>
+    <view class="button-addNote" catchtap="next">
+      <text class="word-next" catchtap="next">添加笔记</text>
+    </view>
 </view>
