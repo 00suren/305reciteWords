@@ -34,10 +34,11 @@ Page({
         console.log(res.authSetting);
         if (res.authSetting['scope.userInfo']) {
           wx.login({
-            success: () => {
+            success: (res) => {
+              var jsCode = res.code
+              console.log(jsCode)
               wx.getUserInfo({
                 success: res => {
-                  console.log(res)
                   this.setData({
                     avatarUrl:res.userInfo.avatarUrl,
                     nickname:res.userInfo.nickName
@@ -45,6 +46,21 @@ Page({
                 },
                 fail: err => {
                   console.log(err)
+                }
+              })
+
+              wx.request({
+                url: `https://00suren.top:8010/login`,
+                data: {
+                  'appid':'wxa7cdc988296bfb77',
+                  'secret':'fb90be43ccd5634bdcb83b9cb5bab78d',
+                  'js_code': jsCode,
+                  'grant_type':'authorization_code'
+                },
+                method: 'POST',
+                success: res => {
+                  console.log(res);
+                 
                 }
               })
             },
