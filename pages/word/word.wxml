@@ -5,7 +5,7 @@
       <text class="word-pron" bindtap="read">/{{pron}}/</text>
     </view>
     <text wx:if="{{showNot}}" class="word-definition">{{definition}}</text>
-    <view class="button-miss" catchtap="show">
+    <view  wx:if="{{!showNot}}" class="button-miss" catchtap="show">
       <text class="word-miss" catchtap="show">不认识</text>
     </view>
     <view class="button-next" catchtap="next">
