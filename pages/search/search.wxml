@@ -1,6 +1,6 @@
 <view class="container">
   <image class="logo" src="/images/search-logo.jpg"></image>
-  <text class="name">辞典</text>
+  <text class="name">{{sentence}}</text>
   <view class="input-container">
     <input class="input-search" bindconfirm="search" placeholder="请输入您要查询的单词" type="text"/>
   </view>
