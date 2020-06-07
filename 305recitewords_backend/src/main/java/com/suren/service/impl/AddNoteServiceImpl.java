@@ -24,6 +24,6 @@ public class AddNoteServiceImpl implements AddNoteService {
         if (result == 0){
             return new CommonResult<>(400, "添加笔记失败", null);
         }
-        return new CommonResult<>(400, "添加笔记成功", note);
+        return new CommonResult<>(200, "添加笔记成功", note);
     }
 }

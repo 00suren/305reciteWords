@@ -1,6 +1,7 @@
 package com.suren.service;
 
 import com.suren.entities.CommonResult;
+import com.suren.entities.User;
 import com.suren.entities.Word;
 import org.apache.ibatis.annotations.Param;
 
@@ -11,4 +12,5 @@ public interface GetWordService {
     CommonResult<Word> getWordsByContent(@Param("content") String content);
 
     CommonResult<ArrayList<Word>> pushWords();
+
 }

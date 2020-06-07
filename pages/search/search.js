@@ -5,7 +5,6 @@ Page({
   search: e => {
     let content = e.detail.value
     wx.request({
-      //url: `https://api.shanbay.com/bdc/search/?word=${content}`,
       url: `https://00suren.top:8010/word/get/${content}`,
       data: {},
       method: 'GET',

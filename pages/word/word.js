@@ -1,7 +1,3 @@
-const list = require('../../data/word-list.js')
-const vocList = require('../../data/vocabulary.js')
-const innerAudioContext = wx.createInnerAudioContext()
-
 Page({
   data: {
     content: null,
@@ -15,17 +11,7 @@ Page({
   },
 
   onLoad: function(){
-    //从本地缓存单词表选取第一个单词
-    var idx = Math.floor(Math.random() * (this.data.worldListMax)) + 1;
-    console.log(idx);
-    var word = list.wordList[idx]
-
-    this.setData({
-      content: word.content,
-      pron: word.pron,
-      definition: word.definition,
-      audioUrl: null
-    })
+    this.next();
   },
 
   show: function () {
@@ -93,7 +79,11 @@ Page({
     })
   },
 
-  addNote:function(){
+  addNote:function(e){
+    var currentWord = this.data.word_push[this.data.count-1]
+    wx.navigateTo({
+      url: `../note/addnote/addnote?wordId=${currentWord.id}`
+    })
 
   }
 })

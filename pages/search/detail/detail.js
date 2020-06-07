@@ -6,7 +6,6 @@ Page({
     const word = option.content
 
     wx.request({
-      //url: `https://api.shanbay.com/bdc/search/?word=${word}`,
       url: `https://00suren.top:8010/word/get/${word}`,
       data: {},
       method: 'GET',

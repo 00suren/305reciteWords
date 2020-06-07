@@ -1,8 +1,8 @@
 package com.suren.controller;
 
 import com.suren.entities.CommonResult;
-import com.suren.entities.Note;
-import com.suren.service.AddNoteService;
+import com.suren.entities.User;
+import com.suren.service.AdduserInfoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description: TODO
+ * @Description:
  * @Author: 00suren
- * @Date: 2020/5/22 18:00
+ * @Date: 2020/6/7 11:03
  **/
 @RestController
 @Slf4j
-public class AddNoteController {
+public class AdduserInfoController {
 
     @Autowired
-    AddNoteService addNoteService;
+    AdduserInfoService adduserInfoService;
 
-    @PostMapping("/addNote")
-    public CommonResult<Note> addNote(@RequestBody Note note){
-        return addNoteService.addNote(note);
+    @PostMapping("/user")
+    public CommonResult<User> addUserInfo(@RequestBody User user){
+        return adduserInfoService.addUserInfo(user);
     }
 }

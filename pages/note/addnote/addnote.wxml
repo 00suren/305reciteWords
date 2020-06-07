@@ -1,0 +1,3 @@
+ <view class="input-container">
+    <input class="input-search" bindconfirm="addNote" placeholder="输入笔记" type="text"/>
+  </view>

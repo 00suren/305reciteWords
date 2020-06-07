@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis .org//DTD Mapper 3.0//EN" "http://mybatis. org/dtd/mybatis-3-mapper.dtd" >
+        <!DOCTYPE mapper PUBLIC "-//mybatis .org//DTD Mapper 3.0//EN" "http://mybatis. org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.suren.dao.AddNoteDao">
-    <insert id="addNote" parameterType="com.suren.entities.Note" useGeneratedKeys="true" keyProperty="noteid">
-        insert into note(notecontent,wxid,wordid) values(#{note.notecontent},#{note.wxid},#{note.wordid})
-    </insert>
+<insert id="addNote" parameterType="com.suren.entities.Note" useGeneratedKeys="true" keyProperty="noteid">
+    insert into note(notecontent,wxid,wordid) values(#{note.notecontent},#{note.wxid},#{note.wordid})
+</insert>
 </mapper>

@@ -6,7 +6,11 @@
     "pages/search/detail/detail",
     "pages/settings/clause/clause",
     "pages/settings/help/help",
-    "pages/settings/feedback/feedback"
+    "pages/settings/feedback/feedback",
+    "pages/note/addnote/addnote",
+    "pages/note/editnote/editnote",
+    "pages/note/deletenote/deletenote",
+    "pages/note/getnoteList/getnoteList"
   ],
   "tabBar": {
     "backgroundColor": "#F7F7FA",

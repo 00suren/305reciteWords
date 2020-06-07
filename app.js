@@ -36,6 +36,11 @@ App({
     }
   },
   globalData: {
-    userId: null
+    userInfo:{
+      name: wx.getStorageSync('userInfo').name,
+      wxid: wx.getStorageSync('userInfo').wxid,
+      avatar: wx.getStorageSync('userInfo').avatar,
+    },
+    loginState: wx.getStorageSync('logState') === true ? true : false, //初始登录状态为false
   }
 })
