@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @Description: TODO
+ * @Description: 配置httpMessageConverter使其支持text/html
  * @Author: 00suren
  * @Date: 2020/6/1 15:24
  **/

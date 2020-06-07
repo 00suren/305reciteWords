@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @Description:
+ * @Description:向数据库中添加用户信息
  * @Author: 00suren
  * @Date: 2020/6/7 11:03
  **/

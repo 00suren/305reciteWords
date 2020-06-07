@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.web.bind.annotation.RequestParam;
 
 /**
- * @Description: TODO
+ * @Description: 微信登录信息实体
  * @Author: 00suren
  * @Date: 2020/6/1 15:51
  **/

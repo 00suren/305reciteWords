@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import org.omg.CosNaming.NamingContextExtPackage.StringNameHelper;
 
 /**
- * @Description: TODO
+ * @Description: 笔记实体
  * @Author: 00suren
  * @Date: 2020/5/22 17:36
  **/

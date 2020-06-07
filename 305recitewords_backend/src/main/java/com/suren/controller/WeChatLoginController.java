@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * @Description: TODO
+ * @Description: 微信登录，需要使用feign调用微信的接口获取openid
  * @Author: 00suren
  * @Date: 2020/6/1 12:18
  **/

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 
 /**
- * @Description: TODO
+ * @Description: 推送单词和查询单词
  * @Author: 00suren
  * @Date: 2020/5/16 21:39
  **/

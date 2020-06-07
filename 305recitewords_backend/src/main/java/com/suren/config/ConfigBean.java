@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Description: TODO
+ * @Description: feign的配置bean
  * @Author: 00suren
  * @Date: 2020/6/1 15:26
  **/

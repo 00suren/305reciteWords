@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @Description: TODO
+ * @Description: 向数据库中添加用户信息
  * @Author: 00suren
  * @Date: 2020/6/7 10:58
  **/
