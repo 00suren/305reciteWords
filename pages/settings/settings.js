@@ -13,11 +13,9 @@ Page({
   onLoad:function(){ 
   },
 
-  showMyWord: function () {
-    wx.showModal({
-      title: '提示',
-      content: '此功能暂未开放，敬请期待！',
-      showCancel: false
+  showMyNote: function () {
+    wx.navigateTo({
+      url: '../note/getnoteList/getnoteList'
     })
   },
   showClause: function () {

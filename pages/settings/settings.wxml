@@ -11,11 +11,11 @@
      <text class="userinfo-nickname">{{nickname||"点击头像登录"}}</text>
   </view>
   <view class="list-container">
-  <view class="list-item" bindtap="showMyWord">
+  <view class="list-item" bindtap="showMyNote">
     <text class="list-name">我的笔记</text>
     <image class="list-icon" src="/images/chevron.png"></image>
   </view> 
-  <view class="list-item" bindtap="showMyWord">
+  <view >
     <text class="list-name"></text>
    
   </view> 

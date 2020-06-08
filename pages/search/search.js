@@ -4,13 +4,13 @@ Page({
 
 onShow:function(){
   wx.request({
-    url: 'http://open.iciba.com/dsapi/',
+    url: 'https://api.vvhan.com/api/ian?type=json',
     data:{},
     method:'GET',
     success:res=>{
       console.log(res);
       this.setData({
-        sentence:res.content
+        sentence:res.data.ishan
       })
     }
   })
