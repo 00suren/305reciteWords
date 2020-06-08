@@ -41,6 +41,6 @@ App({
       wxid: wx.getStorageSync('userInfo').wxid,
       avatar: wx.getStorageSync('userInfo').avatar,
     },
-    loginState: wx.getStorageSync('logState') === true ? true : false, //初始登录状态为false
+    loginState: wx.getStorageSync('logState') 
   }
 })

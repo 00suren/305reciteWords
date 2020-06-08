@@ -11,14 +11,13 @@ Page({
     logged: false
   },
   onLoad:function(){ 
-    console.log(app.globalData)
   },
 
   onShow:function(){
     if(app.globalData.loginState == true){
       this.setData({
         avatarUrl: app.globalData.userInfo.avatar,
-        nickname: app.globalData.userInfo.name
+        nickname: app.globalData.userInfo.name,
       })
     }
   },
@@ -72,6 +71,8 @@ Page({
                     this.data.userInfo.avatar = res.userInfo.avatarUrl;
                     this.data.logged = true;
                     this.data.userInfo.name = res.userInfo.nickName;
+                    app.globalData.loginState = true;
+        
                   console.log(app.userInfo)
 
                     this.setData({
@@ -98,22 +99,21 @@ Page({
                   success: res => {
                     this.data.userInfo.wxid = res.data.openid;
                     wx.setStorageSync('userInfo', this.data.userInfo);
-                    console.log(wx.getStorageSync('userInfo'))
+
+                    wx.request({
+                      url: 'https://00suren.top:8010/user',
+                      data: JSON.stringify(wx.getStorageSync('userInfo')),
+                      method: 'POST',
+                      success: res => {
+                        console.log(res)
+                        app.globalData.userInfo = this.data.userInfo
+                      },
+                      fail: err => {
+                        console.log(err)
+                      }
+                    })
                   }
                 })
-
-                wx.request({
-                  url: 'https://00suren.top:8010/user',
-                  data: JSON.stringify(wx.getStorageSync('userInfo')),
-                  method: 'POST',
-                  success: res => {
-                    console.log(res)
-                  },
-                  fail: err => {
-                    console.log(err)
-                  }
-                })
-
               },
               fail: err => {
                 console.log(err)

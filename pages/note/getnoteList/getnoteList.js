@@ -44,13 +44,14 @@ Page({
         console.log(err)
         wx.showToast({
           title: '删除失败',
-          icon:'success',
+          icon:'none',
           duration:1000
         })
       }
     })
+    this.data.noteList.splice(event.currentTarget.dataset.index,1);
     this.setData({
-      noteList:this.data.noteList.splice(event.currentTarget.dataset.index,1)
+      noteList:this.data.noteList
     })
   }
 
