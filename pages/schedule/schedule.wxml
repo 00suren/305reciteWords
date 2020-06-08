@@ -1,0 +1,28 @@
+<view class="container1">
+  <view class="header">
+    <image class="plus" src="../../images/plus.png"/>
+    <input class="new-todo" value="{{ input }}" placeholder="输入清单标题..." auto-focus bindinput="inputChangeHandle" bindconfirm="addTodoHandle"/>
+  </view>
+  <block wx:if="{{ todos.length }}">
+    <view class="todos">
+      <!-- 列表中的任务如果标记了已完成，应该加载completed的样式 -->
+      <view class="item{{ item.completed ? ' completed' : '' }}" wx:for="{{ todos }}" wx:key="{{ index }}" bindtap="toggleTodoHandle" data-index="{{ index }}">
+        <!-- completed: success, todo: circle -->
+        <icon class="checkbox" type="{{ item.completed ? 'success' : 'circle' }}"/>
+        <text class="name">{{ item.name }}</text>
+        <icon class="remove" type="clear" size="16" catchtap="removeTodoHandle" data-index="{{ index }}"/>
+      </view>
+    </view>
+    <view class="footer">
+      <text class="btn" bindtap="toggleAllHandle">全部标记为完成</text>
+      <text wx:if="{{ leftCount }}">剩余{{ leftCount }}件</text>
+      
+    </view>
+  </block>
+  <block wx:else>
+    <view class="empty">
+      <text class="title">未安排任务</text>
+      <text class="content">快去创建任务吧！</text>
+    </view>
+  </block>
+</view>
