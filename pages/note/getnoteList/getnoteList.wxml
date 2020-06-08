@@ -1,2 +1,21 @@
-<!--pages/note/getnoteList/getnoteList.wxml-->
-<text>pages/note/getnoteList/getnoteList.wxml</text>
+<block wx:if="{{ noteList.length }}">
+  <view class="container1">
+    <view class="logs" wx:if="{{ noteList.length }}">
+      <view class="item" wx:for="{{ noteList }}" wx:key="index">
+        <text class="name">单词：{{item.wordcontent }}</text>
+        <view class="action_edit" data-index="{{index}}" bindtap="editNote">
+          <text>编辑</text>
+        </view>
+        <view class="action_delete" data-index="{{index}}" bindtap="deleteNote">
+          <text>删除</text>
+        </view>
+        <text class="timestamp">笔记：{{ item.notecontent }}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<block wx:else>
+   <view class="empty">
+      <text class="content">还没有添加过笔记...</text>
+    </view>
+</block>

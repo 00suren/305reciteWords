@@ -17,5 +17,6 @@ public class Note {
     private String wxid;
     private Integer noteid;
     private String notecontent;
+    private String wordcontent;
 
 }

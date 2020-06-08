@@ -1,1 +1,60 @@
 /* pages/note/getnoteList/getnoteList.wxss */
+.container1 {
+  padding: 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+}
+.logs {
+  border: 1rpx solid #e0e0e0;
+  border-radius: 10rpx;
+  box-shadow: 0 0 5rpx #e0e0e0;
+}
+
+.item {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  font-size: 30rpx;
+  color: #888;
+  background-color: white;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.timestamp {
+  display: block;
+  margin-top: 20rpx;
+}
+
+.name {
+  display: inline-block;
+  width: 70%;
+  color: #aa0;
+}
+
+.action_delete {
+  display: inline-block;
+  width: 15%;
+  color: #f40;
+  text-align: right;
+}
+
+.action_edit{
+  display: inline-block;
+  width: 15%;
+  color: rgb(0, 195, 255);
+  text-align: right;
+}
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty .content {
+  color: #666;
+  margin-top: 45%;
+  justify-content: center;
+  align-items: center;
+}

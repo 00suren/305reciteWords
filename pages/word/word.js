@@ -1,3 +1,4 @@
+const app = getApp()
 Page({
   data: {
     content: null,
@@ -80,10 +81,21 @@ Page({
   },
 
   addNote:function(e){
-    var currentWord = this.data.word_push[this.data.count-1]
-    wx.navigateTo({
-      url: `../note/addnote/addnote?wordId=${currentWord.id}`
-    })
+    if(app.globalData.loginState==true){
+      var currentWord = this.data.word_push[this.data.count-1]
+      wx.navigateTo({
+        url: `../note/addnote/addnote?wordId=${currentWord.id}&wordContent=${currentWord.english}`
+      })
+      this.next();
+    }
+    else{
+      wx.showToast({
+        title: '请先登录',
+        icon:'none',
+        duration: 1000
+      })
+    }
+
 
   }
 })

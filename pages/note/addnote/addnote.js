@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    wordid:null
+    wordid:null,
+    wordcontent:null
   },
 
   /**
@@ -14,6 +15,7 @@ Page({
    */
   onLoad: function (options) {
     this.data.wordid = parseInt(options.wordId)
+    this.data.wordcontent = options.wordContent
     console.log(options.wordId)
   },
   /**
@@ -26,13 +28,16 @@ Page({
   },
 
   addNote:function(e){
+    
+    //获取输入的笔记内容
     let noteContent = e.detail.value
     wx.request({
       url: 'https://00suren.top:8010/note',
       data:{
         "wxid":app.globalData.userInfo.wxid,
         "wordid":this.data.wordid,
-        "notecontent": noteContent
+        "notecontent": noteContent,
+        "wordcontent":this.data.wordcontent
       },
       method:'POST',
       success: res=>{

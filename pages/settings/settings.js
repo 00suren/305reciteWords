@@ -11,12 +11,32 @@ Page({
     logged: false
   },
   onLoad:function(){ 
+    console.log(app.globalData)
+  },
+
+  onShow:function(){
+    if(app.globalData.loginState == true){
+      this.setData({
+        avatarUrl: app.globalData.userInfo.avatar,
+        nickname: app.globalData.userInfo.name
+      })
+    }
   },
 
   showMyNote: function () {
-    wx.navigateTo({
-      url: '../note/getnoteList/getnoteList'
-    })
+    if(app.globalData.loginState==true){
+      wx.navigateTo({
+        url: '../note/getnoteList/getnoteList'
+      })
+    }
+    else{
+      wx.showToast({
+        title: '请先登录',
+        icon:'none',
+        duration: 1000
+      })
+    }
+
   },
   showClause: function () {
     wx.navigateTo({
