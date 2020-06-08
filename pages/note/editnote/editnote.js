@@ -1,10 +1,15 @@
 // pages/note/editnote/editnote.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
+  data: {    
+    wordid:null,
+    wordcontent:null,
+    noteid:null,
+    notecontent:null
 
   },
 
@@ -12,55 +17,54 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.data.wordid = parseInt(options.wordId)
+    this.data.wordcontent = options.wordContent
+    this.data.noteid = options.noteId
+    this.data.notecontent = options.noteContent
+    console.log(options)
+  },
+  onShow:function(){
+    this.setData({
+      notecontent:this.data.notecontent
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  editNote:function(e){
+     //获取输入的笔记内容
+     let noteContentNew = e.detail.value
+     wx.request({
+       url: 'https://00suren.top:8010/note',
+       data:{
+         "wxid":app.globalData.userInfo.wxid,
+         "wordid":this.data.wordid,
+         "notecontent": noteContentNew,
+         "wordcontent":this.data.wordcontent,
+         "noteid":this.data.noteid
+       },
+       method:'PUT',
+       success: res=>{
+         console.log(res)
+         wx.showToast({
+           title: '修改笔记成功',
+           icon: 'success',
+           duration:1000
+         })
+         // wx.navigateBack({
+         //   delta:1
+         // })
+       },
+       fail:err=>{
+         console.log(err)
+         wx.showToast({
+           title: '修改笔记失败',
+           icon: 'none',
+           duration: 1000
+         })
+       }
+     })
+   wx.navigateBack({
+       delta:1
+     })
+   
   }
 })

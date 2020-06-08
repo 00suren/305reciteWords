@@ -8,7 +8,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onShow: function (options) {
     wx.request({
       url: `https://00suren.top:8010/note/${app.globalData.userInfo.wxid}`,
       body:{},
@@ -23,8 +23,10 @@ Page({
   },
 
   editNote:function(event){
-    console.log(event.currentTarget.dataset.index)
-    console.log(this.data.noteList[event.currentTarget.dataset.index])
+    var currentNote = this.data.noteList[event.currentTarget.dataset.index]
+    wx.navigateTo({
+      url: `../editnote/editnote?noteId=${currentNote.noteid}&wordContent=${currentNote.wordcontent}&wordId=${currentNote.wordid}&noteContent=${currentNote.notecontent}`
+    })
   },
  
   deleteNote:function(event){

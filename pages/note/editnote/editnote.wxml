@@ -1,2 +1,3 @@
-<!--pages/note/editnote/editnote.wxml-->
-<text>pages/note/editnote/editnote.wxml</text>
+ <view class="input-container">
+    <input class="input-search" bindconfirm="editNote" type="text" value="{{notecontent}}" placeholder="请输入内容..."/>
+  </view>

@@ -9,7 +9,6 @@
     "pages/settings/feedback/feedback",
     "pages/note/addnote/addnote",
     "pages/note/editnote/editnote",
-    "pages/note/deletenote/deletenote",
     "pages/note/getnoteList/getnoteList"
   ],
   "tabBar": {
