@@ -27,9 +27,9 @@
     <text class="list-name">关于作者</text>
     <image class="list-icon" src="/images/chevron.png"></image>
   </view>
-  <!-- <view class="list-item" bindtap="showFeedback">
+  <view class="list-item" bindtap="showFeedback">
     <text class="list-name">用户反馈</text>
     <image class="list-icon" src="/images/chevron.png"></image>
-  </view> -->
+  </view>
   </view>
 </view>
