@@ -7,7 +7,7 @@
     "pages/schedule/schedule",
     "pages/settings/clause/clause",
     "pages/settings/help/help",
-    "pages/settings/feedback/feedback",
+    "pages/settings/feedback/index",
     "pages/note/addnote/addnote",
     "pages/note/editnote/editnote",
     "pages/note/getnoteList/getnoteList"

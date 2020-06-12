@@ -49,7 +49,7 @@ Page({
   },
   showFeedback: function () {
     wx.navigateTo({
-      url: './feedback/feedback'
+      url: './feedback/index'
     })
   },
 

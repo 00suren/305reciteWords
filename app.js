@@ -3,11 +3,6 @@
 const hotapp = require('./utils/hotapp.js')
 // hotapp.setDebug(true)
 
-const wilddog = require('./utils/wilddog-weapp-all.js')
-const config = {
-  syncURL: 'https://miemie.wilddogio.com',
-  authDomain: 'miemie.wilddog.com'
-}
 
 App({
   onLaunch: function(){
@@ -16,7 +11,8 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    wilddog.initializeApp(config)
+  //初始化hotapp，使用自己的hotappkey（注册地址：https://weixin.hotapp.cn/api）
+  hotapp.init('hotapp758548033');
   },
   getUserInfo: function(cb) {
     if (this.globalData.userInfo==null) {
@@ -41,6 +37,7 @@ App({
       wxid: wx.getStorageSync('userInfo').wxid,
       avatar: wx.getStorageSync('userInfo').avatar,
     },
-    loginState: wx.getStorageSync('logState') 
+    loginState: wx.getStorageSync('logState') ,
+    hotapp: hotapp // 这里作为一个全局变量, 方便其它页面调用
   }
 })
