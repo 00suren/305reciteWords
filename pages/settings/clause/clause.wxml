@@ -1,8 +1,5 @@
 <!--pages/settings/clause/clause.wxml-->
 <view>
-    <text class="clause">1.查询单词时，输入单词之后按回车就可以进行查询</text>
+    <text class="clause">1.查询单词/添加笔记/修改笔记时，输入单词之后按回车就可以进行查询</text>
 </view>
 
-<view>
-  <text class="clause">2.生词本和添加笔记功能暂未开放，敬请期待</text>
-</view>
